@@ -2,6 +2,7 @@ import { caeserCipher } from "./modules/caesarCipher";
 import { calculate } from "./modules/calculate";
 import { capitalize } from "./modules/capitalize";
 import { reverseString } from "./modules/reverseString";
+import { analyzeArray } from "./modules/analyzeArray";
 
 test("all lowercase on capitalize", () => {
   expect(capitalize("hello")).toBe("Hello");
@@ -52,4 +53,13 @@ test("invalid operation", () => {
 test("caeser cipher", () => {
   expect(caeserCipher("Hello", 2)).toBe("Jgnnq");
   expect(caeserCipher("This is a test! :)", 10)).toBe("Drsc sc k docd! :)");
+});
+
+test("analyze array", () => {
+  const object = analyzeArray([1, 8, 3, 4, 2, 6]);
+
+  expect(object["average"]).toBe(4);
+  expect(object["min"]).toBe(1);
+  expect(object["max"]).toBe(8);
+  expect(object["length"]).toBe(6);
 });
