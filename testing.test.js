@@ -1,3 +1,4 @@
+import { caeserCipher } from "./modules/caesarCipher";
 import { calculate } from "./modules/calculate";
 import { capitalize } from "./modules/capitalize";
 import { reverseString } from "./modules/reverseString";
@@ -46,4 +47,9 @@ test("calculate - multiply", () => {
 
 test("invalid operation", () => {
   expect(() => calculate("party", 100, 100)).toThrow(Error);
+});
+
+test("caeser cipher", () => {
+  expect(caeserCipher("Hello", 2)).toBe("Jgnnq");
+  expect(caeserCipher("This is a test! :)", 10)).toBe("Drsc sc k docd! :)");
 });
